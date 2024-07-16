@@ -1,0 +1,6 @@
+在Java中，浅拷贝（Shallow Copy）和深拷贝（Deep Copy）是对象复制时需要考虑的两种重要方式。浅拷贝会创建一个新对象，但这个新对象会复制原有对象中的非静态和非常量基本数据类型的字段，以及对象的引用字段。但是，它不会复制引用字段所指向的对象本身，即新对象和原对象会共享那些引用字段所指向的对象。而深拷贝则会完全复制一个对象，包括这个对象引用的其他所有对象，从而创建出一个完全独立的新对象。
+比如
+List<Integer> listA = List.of(1, 2, 3);
+List<Integer> listB = new ArrayList<>(listA);
+虽然listB是浅拷贝listA的，但因为Integer是基本数据类型，
+所以实际上listB的mutation不会影响listA
