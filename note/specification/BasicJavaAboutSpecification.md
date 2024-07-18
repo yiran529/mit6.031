@@ -27,4 +27,7 @@ throws向上抛出异常，可以无限向上抛，直到到达main函数，此�
 
 
 检查型异常是让编译器检查的异常，一般是special result，比如没找到指定元素，一个method如果要用检查型异常，就必须在signature里面写，如果调用了含检查型异常的方法，也必须有对相关异常的处理
-非检查型异常 are not expected to be handled by the code except perhaps at the top level. We wouldn’t want every method up the call chain to have to declare that it (might) throw all the kinds of bug-related exceptions that can happen at lower call levels: index out of bounds, null values, illegal arguments, assertion failures, etc.
+非检查型异常 are not expected to be handled by the code except perhaps at the top level.它们一般是bug（错误）。 We wouldn’t want every method up the call chain to have to declare that it (might) throw all the kinds of bug-related exceptions that can happen at lower call levels: index out of bounds, null values, illegal arguments, assertion failures, etc.
+
+注（GPT回答）：
+编译时处理检查型异常的意思是：在编写代码时，编译器会检查所有可能抛出检查型异常的代码路径。如果某个方法可能抛出检查型异常，而代码中没有显式处理（使用try-catch块）或在方法签名中声明（使用throws关键字），编译器将会报错，不允许代码通过编译。这种机制确保了程序员在编写代码时就考虑到并处理了这些可能的异常情况。
